@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/limetext/gopy"
+	"github.com/glycerine/gopy"
 )
 
 var mydir string

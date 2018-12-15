@@ -3,7 +3,7 @@ package py_test
 import (
 	"testing"
 
-	"github.com/limetext/gopy"
+	"github.com/glycerine/gopy"
 )
 
 func TestFunction(t *testing.T) {

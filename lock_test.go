@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/limetext/gopy"
+	"github.com/glycerine/gopy"
 )
 
 func test2() {
