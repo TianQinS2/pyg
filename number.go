@@ -334,7 +334,16 @@ func (n *NumberProtocol) InPlaceOr(obj Object) (Object, error) {
 
 // PyNumber_Long: TODO
 
-// PyNumber_Float: TODO
+func AsFloat(obj Object) (*Float, error) {
+	if obj == nil {
+		return nil, exception()
+	}
+	ret := C.PyNumber_Float(c(obj))
+	if ret == nil {
+		return nil, exception()
+	}
+	return newFloat(ret), nil
+}
 
 // PyNumber_Index: TODO
 

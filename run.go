@@ -12,8 +12,13 @@ import "unsafe"
 type StartToken int
 
 const (
+	// for isolated expressions
 	EvalInput StartToken = iota
+
+	// for arbitrarily long input
 	FileInput
+
+	// for a single statement
 	SingleInput
 )
 
