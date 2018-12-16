@@ -1,9 +1,9 @@
-// Copyright 2011 Julian Phillips.  All rights reserved.
+// Copyright 2011, 2018 Julian Phillips and the gopy contributors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 /*
-Package py (github.com/glycerine/gp/gopy) provides access to the CPython C API.  This
+Package py (github.com/glycerine/gopy) provides access to the CPython C API.  This
 package presents an idomatic Go interface to the CPython C API described at
 http://docs.python.org/c-api/index.html
 
@@ -21,16 +21,7 @@ In addition to providing the ability to use the API to call into Python calling
 from Python back into Go is also supported.  New types can be implemented in Go
 and exposed into Python.
 
-In addition to the normal Python C API, a optional (i.e. it must be explictly
-enabled) "go" package can be presented to the embedded Python.  This gives
-access to some Go functionality - currently the only extra available is the Chan
-class, which allows Go and Python code to communicate by exchanging Python
-objects over a Go channel.
+The package targets Python 3.7.1 at present.
 
-Python Extensions
-
-Currently it is not possible to write Python extensions in Go, as there is no
-support for producing Go shared libraries in the gc compiler suite, and no
-support for using shared libraries in the gccgo Go runtime.
 */
 package py
