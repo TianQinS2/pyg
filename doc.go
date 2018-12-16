@@ -24,4 +24,4 @@ and exposed into Python.
 The package targets Python 3.7.1 at present.
 
 */
-package py
+package pyg

@@ -1,4 +1,4 @@
-package py
+package pyg
 
 // #include "utils.h"
 // int *gopy_ProgName = NULL;
