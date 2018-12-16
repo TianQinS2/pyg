@@ -8,3 +8,5 @@ http://docs.python.org/3/c-api/index.html
 Embedding Python is fully supported, with the ability to initialise the
 interpreter, enable threading support, manipulate the GIL and call Python API
 functions to manipulate Python objects.
+
+Installation is a simple matter of re-pointing the `python-3.7m.pc` symlink to point to the pkg-config .pc file in your python installation.
