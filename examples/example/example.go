@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/glycerine/gopy"
+	"github.com/glycerine/gp/gopy"
 )
 
 func example(args *py.Tuple) (py.Object, error) {

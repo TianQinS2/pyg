@@ -117,15 +117,13 @@ func (mod *Module) Name() (string, error) {
 	return C.GoString(ret), nil
 }
 
-/* jea: C.PyModule_GetFilename() is deprecated in python3.7
 func (mod *Module) Filename() (string, error) {
-	ret := C.PyModule_GetFilename(c(mod)) // deprecated
+	ret := C.PyModule_GetFilenameObject(c(mod))
 	if ret == nil {
 		return "", exception()
 	}
-	return C.GoString(ret), nil
+	return stringify(newObject(ret)), nil
 }
-*/
 
 func (mod *Module) AddObject(name string, obj Object) error {
 	if obj == nil {

@@ -1,0 +1,1 @@
+../install/lib/pkgconfig/python-3.7m.pc

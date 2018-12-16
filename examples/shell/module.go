@@ -4,7 +4,7 @@
 
 package main
 
-import "github.com/glycerine/gopy"
+import "github.com/glycerine/gp/gopy"
 
 var shMod *py.Module
 

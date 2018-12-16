@@ -34,13 +34,13 @@ func InitializeEx(initsigs bool) {
 	}
 }
 
-func AddToPath(dir string) {
+func AddToPath(dir string) (succeeded bool) {
 	p := C.CString("path")
 	defer C.free(unsafe.Pointer(p))
 
 	sys_path := C.PySys_GetObject(p)
 	if sys_path == nil {
-		return
+		return false
 	}
 
 	s := C.CString(dir)
@@ -48,10 +48,11 @@ func AddToPath(dir string) {
 
 	pDir := C.PyUnicode_FromString(s)
 	if pDir == nil {
-		return
+		return false
 	}
 
 	C.PyList_Append(sys_path, pDir)
+	return true
 }
 
 func Main(args []string) int {

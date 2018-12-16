@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/glycerine/gopy"
+	"github.com/glycerine/gp/gopy"
 )
 
 func test2() {

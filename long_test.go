@@ -3,7 +3,7 @@ package py_test
 import (
 	"testing"
 
-	"github.com/glycerine/gopy"
+	"github.com/glycerine/gp/gopy"
 )
 
 func TestLong(t *testing.T) {

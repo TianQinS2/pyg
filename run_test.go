@@ -1,7 +1,6 @@
 package py
 
 import (
-	"fmt"
 	"os"
 	"testing"
 )
@@ -48,7 +47,13 @@ func TestAddingImportPathAndRun(t *testing.T) {
 		t.Error(b, err)
 	}
 
-	_, err = RunString(fmt.Sprintf("import sys; sys.path.insert(0, '%s'); sp=sys.path;", pathAdd), FileInput, main, nil)
+	ok = AddToPath(pathAdd)
+	if !ok {
+		panic("could not add to sys.path")
+	}
+
+	//_, err = RunString(fmt.Sprintf("import sys; sys.path.insert(0, '%s'); sp=sys.path;", pathAdd), FileInput, main, nil)
+	_, err = RunString("import sys; sp=sys.path;", FileInput, main, nil)
 	panicOn(err)
 
 	sysPath, err := main.GetItemString("sp")
@@ -58,6 +63,13 @@ func TestAddingImportPathAndRun(t *testing.T) {
 
 	_, err = RunString("import pandas;", FileInput, main, nil)
 	panicOn(err)
+
+	// more idiomatic
+	module, err := Import("scipy")
+	_ = module
+	if err != nil {
+		panic(err)
+	}
 
 }
 

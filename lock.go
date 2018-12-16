@@ -28,14 +28,6 @@ func (g *GilState) Release() {
 	}
 }
 
-func AcquireGil() {
-	C.PyEval_AcquireLock()
-}
-
-func ReleaseGil() {
-	C.PyEval_ReleaseLock()
-}
-
 // InitAndLock is a convience function.  It initializes Python, enables thread
 // support, and returns a locked Lock instance.
 func InitAndLock() *Lock {

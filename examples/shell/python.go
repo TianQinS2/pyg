@@ -9,8 +9,9 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
+	"syscall"
 
-	"github.com/glycerine/gopy"
+	"github.com/glycerine/gp/gopy"
 )
 
 var mydir string
@@ -97,7 +98,7 @@ func findPyCmd(cmd string) (CmdFunc, error) {
 	_, err := os.Stat(name)
 	if err != nil {
 		perr := err.(*os.PathError)
-		if perr.Err == os.ENOENT {
+		if perr.Err == syscall.ENOENT {
 			return nil, nil
 		}
 		return nil, err

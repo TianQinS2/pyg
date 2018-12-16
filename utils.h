@@ -10,6 +10,7 @@
 #error "PY_MAJOR_VERSION < 3: Please make sure your cgo.go is configured properly."
 #endif
 
+
 typedef struct {
     // Protective NULL pointer
     void *zero;
@@ -127,6 +128,12 @@ struct _en {
 
 extern struct _en excName(PyObject *o);
 
+/*int doParseTuple(PyObject *args, char *fmt, void *values[], int c);
+int doParseTupleKwds(PyObject *args, PyObject *kwds, char *fmt, char *kwlist[], void *values[], int c);
+PyObject *doBuildValue(char *fmt, ArgValue values[], int c);*/
+
+
 #include "gopy_types.h"
 
 #endif /* _GO_PYTHON_UTILS_H */
+
