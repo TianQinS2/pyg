@@ -11,6 +11,12 @@ func TestAddingImportPathAndRun(t *testing.T) {
 	goPath := os.Getenv("GOPATH")
 	pathAdd := goPath + "/src/github.com/glycerine/gp/install/env3/lib/python3.7/site-packages"
 
+	_, err := os.Stat(pathAdd)
+	if err != nil {
+		t.Skip()
+		return // skip test if custom env3 not available.
+	}
+
 	Initialize()
 	defer Finalize()
 	main, err := NewDict()
