@@ -63,7 +63,7 @@ var (
 	TimeoutError           = newException(C.PyExc_TimeoutError)
 	EnvironmentError       = newException(C.PyExc_EnvironmentError)
 	IOError                = newException(C.PyExc_IOError)
-	//RecursionErrorInst        = newException(C.PyExc_RecursionErrorInst)
+	// RecursionErrorInst        = newException(C.PyExc_RecursionErrorInst)
 	Warning                   = newException(C.PyExc_Warning)
 	UserWarning               = newException(C.PyExc_UserWarning)
 	DeprecationWarning        = newException(C.PyExc_DeprecationWarning)

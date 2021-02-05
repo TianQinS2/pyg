@@ -11,7 +11,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/glycerine/gp/gopy"
+	py "github.com/TianQinS2/pyg"
 )
 
 var mydir string
